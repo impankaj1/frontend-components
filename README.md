@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# Frontend Components Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A collection of high-performance, beautiful, and accessible React components built with TypeScript, Tailwind CSS, and dnd-kit.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🌲 Advanced Tree View
+- **Nested Hierarchy**: Support for infinite deep structures with a unified node model.
+- **Drag & Drop**: Seamlessly reorder siblings or move nodes between parents using `@dnd-kit`.
+- **Lazy Loading**: Optimized performance using `React.lazy` and `Suspense` for recursive rendering.
+- **Inline Editing**: Double-click to edit labels with interactive Save/Cancel actions.
+- **Dynamic Avatars**: Unique level-based avatars with expansion indicators.
+- **Modular Design**: Cleanly refactored into focused sub-components (`TreeNodeAvatar`, `TreeNodeContent`, `ChildNodeInput`).
 
-## React Compiler
+### 📋 Kanban Board
+- **Cross-Column Dragging**: Intuitive task management with smooth drag and drop.
+- **State Management**: Centralized logic powered by Zustand for high performance.
+- **Responsive Layout**: Designed to fit into any modern dashboard or workspace.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite 7](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **State**: [Zustand](https://zustand-demo.pmnd.rs/)
+- **Drag & Drop**: [dnd-kit](https://dndkit.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Type Safety**: TypeScript
 
-## Expanding the ESLint configuration
+## 🏁 Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Development
+```bash
+npm run dev
 ```
+
+### Build
+```bash
+npm run build
+```
+
+## 📂 Project Structure
+```text
+src/
+├── components/
+│   ├── tree/          # Advanced Tree View components
+│   ├── kanban/        # Kanban Board components
+│   ├── layout/        # Shared layout wrappers
+│   └── ui/            # Reusable primitive UI components
+├── store/             # Zustand state management
+├── types/             # TypeScript interfaces and enums
+└── lib/               # Shared utility functions
+```
+
